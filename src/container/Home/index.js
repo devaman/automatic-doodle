@@ -122,16 +122,6 @@ const Home = (props) => {
                                 "group_id": "3",
                                 "variation_id": "22"
                             }
-                        ],
-                        [
-                            {
-                                "group_id": "2",
-                                "variation_id": "12"
-                            },
-                            {
-                                "group_id": "3",
-                                "variation_id": "21"
-                            }
                         ]
                     ]
                 }
@@ -155,7 +145,7 @@ const Home = (props) => {
         fetchData();
     },[])
     const onFormChange= (e,price,inStock)=>{
-        console.log(e.target.value,e.target.name);
+        if(e.target.value==='9999') return;
         const res = variants.reduce((a,b)=> (a[b.group_id]=b,a),{});
         const sel = res[e.target.name].variations.reduce((a,b)=> (a[b.id]=b,a),{});
         console.log(res,sel);
@@ -206,7 +196,7 @@ const Home = (props) => {
             <div>
                 <label>{d.name}</label>
         <select onChange={onFormChange} key={d.group_id} name={d.group_id}  value={userInput[d.group_id].variation_selected.id} >
-        <option value={null}>Select value</option>
+        <option value={9999}>Select value</option>
             {d.variations.map((k,j)=>{
                 return <option disabled={disableBool(d.group_id,k.id)} value={k.id}>{k.name}</option>
             })}
