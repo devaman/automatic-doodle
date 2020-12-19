@@ -192,7 +192,8 @@ const Home = (props) => {
         return (
             <div>
                 <label>{d.name}</label>
-        <select onChange={onFormChange} key={d.group_id} name={d.group_id}  value={userInput[d.group_id].variation_selected.id} class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+        <select onChange={onFormChange} key={d.group_id} name={d.group_id}  value={userInput[d.group_id].variation_selected.id} >
+        <option value={null}>Select value</option>
             {d.variations.map((k,j)=>{
                 return <option disabled={disableBool(d.group_id,k.id)} value={k.id}>{k.name}</option>
             })}
