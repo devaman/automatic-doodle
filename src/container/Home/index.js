@@ -144,16 +144,19 @@ const Home = (props) => {
         }
         fetchData();
     },[])
-    const onFormChange= (e)=>{
+    const onFormChange= (e,price,inStock)=>{
         console.log(e.target.value,e.target.name);
-        
+        const res = variants.reduce((a,b)=> (a[b.group_id]=b,a),{});
+        const sel = res[e.target.name].variations.reduce((a,b)=> (a[b.id]=b,a),{});
+        console.log(res,sel);
         setUserInput({
             ...userInput,
         [e.target.name]:{
             ...userInput[e.target.name],
             variation_selected:{
-                id:parseInt(e.target.value)
-                
+                id:parseInt(e.target.value),
+                price:sel[parseInt(e.target.value)].price,
+                inStock:sel[parseInt(e.target.value)].inStock
             }
         }
         })
@@ -205,6 +208,8 @@ const Home = (props) => {
     return (
         <Layout>
             {options}
+            <h6>selected Values</h6>
+            {JSON.stringify(userInput)}
         </Layout>
     )
 }
