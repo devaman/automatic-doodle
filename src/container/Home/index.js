@@ -152,8 +152,7 @@ const Home = (props) => {
         [e.target.name]:{
             ...userInput[e.target.name],
             variation_selected:{
-                id:parseInt(e.target.value),
-                price:variants[e.target.name]
+                id:parseInt(e.target.value)
                 
             }
         }
