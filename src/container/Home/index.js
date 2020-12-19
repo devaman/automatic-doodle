@@ -87,7 +87,7 @@ const Home = (props) => {
                                     "name": "Tomato",
                                     "price": 20,
                                     "default": 0,
-                                    "id": "21 ",
+                                    "id": "21",
                                     "inStock": 1,
                                     "isVeg": 1
                                 },
@@ -121,6 +121,16 @@ const Home = (props) => {
                             {
                                 "group_id": "3",
                                 "variation_id": "22"
+                            }
+                        ],
+                        [
+                            {
+                                "group_id": "2",
+                                "variation_id": "12"
+                            },
+                            {
+                                "group_id": "3",
+                                "variation_id": "21"
                             }
                         ]
                     ]

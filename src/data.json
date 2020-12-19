@@ -2,6 +2,34 @@
     "variants": {
         "variant_groups": [
             {
+                "group_id": "30",
+                "name": "Crust",
+                "variations": [
+                    {
+                        "name": "Thin",
+                        "price": 0,
+                        "default": 1,
+                        "id": "1",
+                        "inStock": 1
+                    },
+                    {
+                        "name": "Thick",
+                        "price": 0,
+                        "default": 0,
+                        "id": "2",
+                        "inStock": 1,
+                        "isVeg": 1
+                    },
+                    {
+                        "name": "Cheese burst",
+                        "price": 100,
+                        "default": 0,
+                        "id": "3",
+                        "inStock": 1,
+                        "isVeg": 1
+                    }
+                ]
+            },{
                 "group_id": "1",
                 "name": "Crust",
                 "variations": [
